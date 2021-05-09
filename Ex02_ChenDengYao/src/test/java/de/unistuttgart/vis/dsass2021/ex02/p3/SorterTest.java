@@ -10,64 +10,73 @@ import de.unistuttgart.vis.dsass2021.ex02.p3.Sorter;
 
 public class SorterTest {
 	
-@Test	
+	@Test	
 	public void testSorter1() {
 	
-	ISimpleList simList = new SimpleList();
-	simList.append(3);
-	simList.append(5);
-	simList.append(2);
-	simList.append(1);
-	simList.append(4);
-		Sorter.selectionSort(simList);
+		int[] expected_list = {5,4,3,2,1};
+		int[] origin_list = {3,5,4,2,1};
+	
+	
+		ISimpleList simList = new SimpleList();
 		ISimpleList expList = new SimpleList();
-		expList.append(5);
-		expList.append(4);
-		expList.append(3);
-		expList.append(2);
-		expList.append(1);
+	
+		for( int i=0 ; i< 5; i++   ) {
+			simList.append(origin_list[i] );
+			expList.append(expected_list[i] );
+		}
+		Sorter.selectionSort(simList);
+	
 		
-		assertEquals(expList,simList);
+		for(int i = 0; i< simList.size(); i++) {
+		assertEquals( expList.get(i), simList.get(i)   );
+		}
 	}
 
-@Test	
-public void testSorter2() {
 
-ISimpleList simList = new SimpleList();
-simList.append(3);
-simList.append(5);
-simList.append(2);
-simList.append(1);
-simList.append(4);
-	Sorter.insertionSort(simList);
-	ISimpleList expList = new SimpleList();
-	expList.append(5);
-	expList.append(4);
-	expList.append(3);
-	expList.append(2);
-	expList.append(1);
+
+	@Test	
+	public void testSorter2() {
 	
-	assertEquals(expList,simList);
-}
-
-@Test	
-public void testSorter3() {
-
-ISimpleList simList = new SimpleList();
-simList.append(3);
-simList.append(5);
-simList.append(2);
-simList.append(1);
-simList.append(4);
-	Sorter.bubbleSort(simList);
-	ISimpleList expList = new SimpleList();
-	expList.append(1);
-	expList.append(2);
-	expList.append(3);
-	expList.append(4);
-	expList.append(5);
+		int[] expected_list = {5,4,3,2,1};
+		int[] origin_list = {3,5,4,2,1};
 	
-	assertEquals(expList,simList);
-}
+	
+		ISimpleList simList = new SimpleList();
+		ISimpleList expList = new SimpleList();
+	
+		for( int i=0 ; i< 5; i++   ) {
+			simList.append(origin_list[i] );
+			expList.append(expected_list[i] );
+		}
+		Sorter.insertionSort(simList);
+	
+		
+		for(int i = 0; i< simList.size(); i++) {
+		assertEquals( expList.get(i), simList.get(i)   );
+		}
+	}
+	
+	@Test	
+	public void testSorter3() {
+	
+		int[] expected_list = {5,4,3,2,1};
+		int[] origin_list = {3,5,4,2,1};
+	
+	
+		ISimpleList simList = new SimpleList();
+		ISimpleList expList = new SimpleList();
+	
+		for( int i=0 ; i< 5; i++   ) {
+			simList.append(origin_list[i] );
+			expList.append(expected_list[i] );
+		}
+		Sorter.bubbleSort(simList);
+	
+		
+		for(int i = 0; i< simList.size(); i++) {
+		assertEquals( expList.get(i), simList.get(i)   );
+		}
+	}
+
     
 }

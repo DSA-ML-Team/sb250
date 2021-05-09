@@ -33,4 +33,8 @@ public class SimpleList<T extends Comparable<T>> implements ISimpleList<T> {
 		list.set(j, tmp);
 	}
 
+	@Override
+	public void set(int index, T element) {
+		list.set(index , element);
+	}
 }

@@ -37,4 +37,6 @@ public interface ISimpleList<T extends Comparable<T>> {
 	 * @throws IndexOutOfBounds if the given indices are out of range
 	 */
 	public void swap(int i, int j);
+	
+	public void set(int index, T element);
 }

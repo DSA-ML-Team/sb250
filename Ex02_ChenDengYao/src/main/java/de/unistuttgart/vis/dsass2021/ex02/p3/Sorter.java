@@ -33,27 +33,25 @@ public class Sorter {
 	
 	public static <T extends Comparable<T>> void insertionSort(ISimpleList<T> list) {
 	
-		  for(int i=1; i<list.size()-1; i++){
+		  for(int i=1; i<list.size(); i++){
 			  
 			  T temp = list.get(i);
 			  int j=i;
 			  
 			  while(j>0){
 				
-				  if(temp.compareTo(list.get(j))>0){
+				  if(temp.compareTo(list.get(j-1))>0){
 					  list.swap(j,j-1);
 					  j--;
 				    }
 				  else {break;}
 			     }
-               list.swap(i, j);
-	       }
-		  for (int k=0 ; k< list.size() ; k++) {
-		        System.out.println(list.get(k));
-		  }
-		        System.out.println("\n");
-		  
+               list.set( j , temp );
+	       }  
 	 }
+	
+	
+	
 	
 	public static <T extends Comparable<T>> void bubbleSort(ISimpleList<T> list) {
 
@@ -67,12 +65,9 @@ public class Sorter {
 				
 				list.swap(j, j+1);
 			}
+		  }
 		}
-		}
-		for (int k=0 ; k< list.size() ; k++) {
-	        System.out.println(list.get(k));
-		}
-		    System.out.println("\n");
+
 	}
 	
 	
